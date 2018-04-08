@@ -1,0 +1,106 @@
+:root {
+  /* --x-color: orangered;
+  --o-color: lightblue; */
+  --x-color: #040404bd; 
+  --o-color: #f4f4f4c4; 
+  --background: mistyrose;
+}
+
+html {
+  font-size: 10px;
+  background: linear-gradient(to bottom right, rgb(53, 223, 214), rgb(55, 155, 206));
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: 180px repeat(3, 200px);
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+}
+
+.scoreboard__score-box, .play-area__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SCOREBOARD */
+.scoreboard {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+  font-size: 4rem;
+}
+
+.scoreboard > * {
+  border: 0.5rem solid black;
+}
+
+.scoreboard__score-box {
+  height: 150px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* background: var(--background); */
+}
+
+.scoreboard__score-box p {
+  margin: 15px;
+}
+
+.scoreboard__score-box button {
+  width: 100px;
+  height: 30px;
+  background: white;
+  font-size: medium;
+  border: 2px solid black;
+  font-weight: 500;
+}
+
+.scoreboard__score-box button:active {
+  background: lightgrey;
+}
+
+.scoreboard__x-box, .scoreboard__o-box {
+  height: 120px;
+  width: 120px;
+}
+
+.scoreboard__x-box, .x-win {
+  background: var(--x-color);
+}
+
+.scoreboard__o-box, .o-win {
+  background: var(--o-color);
+}
+
+
+/* PLAYAREA */
+.play-area__box {
+  /* background: var(--background); */
+  border: 0.5rem solid var(--x-color);
+  font-size: 5rem;
+}
+
+
+.x-box:before {
+  content: 'X';
+}
+
+.x-box {
+  background: var(--x-color);
+}
+
+.o-box:before {
+  content: 'O';
+}
+
+.o-box {
+  background: var(--o-color);
+}
